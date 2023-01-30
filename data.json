@@ -1,0 +1,120 @@
+{
+    "sectors": [
+        {
+            "name": "Manufacturing",
+            "options": ["Construction materials", "Electronics and Optics"]
+        },
+        {
+            "name": "Food and Beverage",
+            "options": [
+                "Bakery & confectionery products",
+                "Beverages",
+                "Fish & fish products",
+                "Meat & meat products",
+                "Milk & dairy products",
+                "Sweets & snack food",
+                "Oth er (foods)"
+            ]
+        },
+        {
+            "name": "Furniture",
+            "options": [
+                "Bathroom/sauna",
+                "Bedroom",
+                "Children’s room",
+                "Kitchen",
+                "Living room",
+                "Office",
+                "Outdoor",
+                "Project furniture",
+                "Other (Furniture)"
+            ]
+        },
+        {
+            "name": "Machinery",
+            "options": [
+                "Machinery components",
+                "Machinery equipment/tools",
+                "Manufacture of machinery",
+                "Maritime",
+                "Aluminium and steel workboats",
+                "Boat/Yacht building",
+                "Ship repair and conversion",
+                "Metal structures",
+                "Repair and maintenance service",
+                "Other (machinery)"
+            ]
+        },
+        {
+            "name": "Metalworking",
+            "options": [
+                "Construction of metal structures",
+                "Houses and buildings",
+                "Metal products",
+                "Metal works",
+                "CNC-machining",
+                "Forgings, Fasteners",
+                "Gas, Plasma, Laser cutting",
+                "MIG, TIG, Aluminum welding"
+            ]
+        },
+        {
+            "name": "Plastic and Rubber",
+            "options": [
+                "Packaging",
+                "Plastic goods",
+                "Plastic processing technology",
+                "Blowing",
+                "Moulding",
+                "Plastics welding and processing",
+                "Plastic profiles"
+            ]
+        },
+        {
+            "name": "Printing",
+            "options": [
+                "Advertising",
+                "Book/Periodicals printing",
+                "Labelling and packaging printing"
+            ]
+        },
+        {
+            "name": "Textile and Clothing",
+            "options": ["Clothing", "Textile"]
+        },
+        {
+            "name": "Wood",
+            "options": [
+                "Wooden building materials",
+                "Wooden houses",
+                "Other (Wood)"
+            ]
+        },
+        {
+            "name": "Service",
+            "options": [
+                "Business services",
+                "Engineering",
+                "Information Technology and Telecommunications",
+                "Data processing, Web portals, E-marketing",
+                "Programming, Consultancy",
+                "Telecommunications",
+                "Tourism",
+                "Translation services",
+                "Transport and Logistics",
+                "Air",
+                "Rail",
+                "Road",
+                "Water"
+            ]
+        },
+        {
+            "name": "Other",
+            "options": [
+                "Creative industries",
+                "Energy technology",
+                "Environment"
+            ]
+        }
+    ]
+}
