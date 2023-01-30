@@ -2,8 +2,10 @@ import { getDatabase, ref, set } from "firebase/database";
 import { useState } from "react";
 import testingApp from "../firebase";
 import Select from "./Select";
+import Selected from "./Selected";
 
 const UsersForm = () => {
+    const [refill, setRefill] = useState(false);
     const [error, setError] = useState(false);
     // const [loading, setLoading] = useState(true);
     const [formData, setFormData] = useState({
@@ -51,7 +53,12 @@ const UsersForm = () => {
             );
         }
 
-        setUserData("user-1", formData);
+        if (!refill) {
+            setUserData("user-1", formData);
+        } else {
+            setError("Already Saved");
+        }
+
         console.log(formData);
         // Submit form data to the server
     };
@@ -67,15 +74,17 @@ const UsersForm = () => {
             isAgree,
         });
         // setLoading(false);
+        setRefill(true);
     }
 
     // to handle reset button when user will click it
     const handleReset = (event) => {
+        setError(false);
         setFormData({
-            name: "",
+            ...formData,
             sectors: [],
-            isAgree: false,
         });
+        setRefill(false);
     };
 
     return (
@@ -87,22 +96,34 @@ const UsersForm = () => {
                 </h5>
                 <div className="user-name">
                     <label htmlFor="name">Name:</label>
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Enter Name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
+                    {!refill && (
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Enter Name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+                    )}
+                    {refill && (
+                        <input
+                            type="text"
+                            value={formData.name}
+                            contentEditable={false}
+                        />
+                    )}
                 </div>
                 <div className="sector-area">
                     <label htmlFor="sectors">Sectors:</label>
-                    <Select
-                        onChangeHandler={handleChange}
-                        value={formData.sectors}
-                        required
-                    />
+                    {!refill && (
+                        <Select
+                            onChangeHandler={handleChange}
+                            value={formData.sectors}
+                            required
+                        />
+                    )}
+                    {refill && <Selected selected={formData.sectors} />}
                 </div>
                 {error && <h5 className="error">{error}</h5>}
                 <input
@@ -116,7 +137,7 @@ const UsersForm = () => {
 
                 <div className="button-area">
                     <input type="submit" value="Save" />
-                    <input type="reset" value="Reset" onClick={handleReset} />
+                    <input type="reset" value="Edit" onClick={handleReset} />
                 </div>
             </form>
         </div>
