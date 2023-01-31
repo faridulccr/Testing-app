@@ -112,7 +112,7 @@ const UsersForm = () => {
                 </div>
                 <div className="sector-area">
                     <label htmlFor="sectors">Sectors:</label>
-                    {!refill && <Select onChangeHandler={handleChange} />}
+                    {!refill && <Select onChangeHandler={handleChange} value={formData.sectors}/>}
                     {refill && <Selected selected={formData.sectors} />}
                 </div>
                 {error && <h5 className="error">{error}</h5>}
