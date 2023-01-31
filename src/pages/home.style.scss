@@ -54,8 +54,26 @@
                 }
             }
         }
-        select.selected-items {
-            padding-bottom: 10px;
+        div.selected-items {
+            margin-left: 10px;
+            min-width: 240px;
+            width: fit-content;
+            min-height: 100px;
+            max-height: 200px;
+            padding: 5px 10px;
+            // border: 1px solid black;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #000;
+            overflow-y: scroll;
+
+            ol {
+                list-style-position: inside;
+                li {
+                    margin: 4px 0;
+                }
+            }
         }
     }
     .error {
