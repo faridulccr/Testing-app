@@ -54,13 +54,13 @@ const UsersForm = () => {
         }
 
         if (!refill) {
+            // Submit form data to the server
             setUserData("user-1", formData);
         } else {
             setError("Already Saved");
         }
 
         console.log(formData);
-        // Submit form data to the server
     };
 
     // set user data to database
@@ -107,21 +107,12 @@ const UsersForm = () => {
                         />
                     )}
                     {refill && (
-                        <input
-                            type="text"
-                            value={formData.name}
-                            contentEditable={false}
-                        />
+                        <input type="text" value={formData.name} readOnly />
                     )}
                 </div>
                 <div className="sector-area">
                     <label htmlFor="sectors">Sectors:</label>
-                    {!refill && (
-                        <Select
-                            onChangeHandler={handleChange}
-                            value={formData.sectors}
-                        />
-                    )}
+                    {!refill && <Select onChangeHandler={handleChange} />}
                     {refill && <Selected selected={formData.sectors} />}
                 </div>
                 {error && <h5 className="error">{error}</h5>}

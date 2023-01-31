@@ -1,7 +1,7 @@
 import useSector from "../hooks/useSector";
 import Sectors from "./Sectors";
 
-const Select = ({ onChangeHandler, value }) => {
+const Select = ({ onChangeHandler }) => {
     const { loading, error, sectors } = useSector();
 
     return (
@@ -14,7 +14,7 @@ const Select = ({ onChangeHandler, value }) => {
                     size="10"
                     name="sectors"
                     onChange={onChangeHandler}
-                    value={value}
+                    defaultValue={sectors[0].options}
                     required
                 >
                     <Sectors sectors={sectors} />
