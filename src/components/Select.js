@@ -15,6 +15,7 @@ const Select = ({ onChangeHandler, value }) => {
                     name="sectors"
                     onChange={onChangeHandler}
                     value={value}
+                    required
                 >
                     <Sectors sectors={sectors} />
                 </select>

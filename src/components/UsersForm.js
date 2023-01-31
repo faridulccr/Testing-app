@@ -120,7 +120,6 @@ const UsersForm = () => {
                         <Select
                             onChangeHandler={handleChange}
                             value={formData.sectors}
-                            required
                         />
                     )}
                     {refill && <Selected selected={formData.sectors} />}
