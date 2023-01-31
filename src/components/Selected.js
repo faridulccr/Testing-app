@@ -3,12 +3,10 @@ const Selected = ({ selected }) => {
         <select
             className="selected-items"
             multiple={true}
-            size="10"
-            contentEditable={false}
         >
             {selected &&
                 selected.length > 0 &&
-                selected.map((item, i) => <option>{item}</option>)}
+                selected.map((item, i) => <option disabled selected>{item}</option>)}
         </select>
     );
 };
